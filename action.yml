@@ -1,7 +1,5 @@
 name: Shipwright Token
 description: Automates style generation from a Shipwright design
-icon: anchor
-color: blue
 author: Headwayio
 
 on:
