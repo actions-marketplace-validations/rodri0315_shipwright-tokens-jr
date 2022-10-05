@@ -1,22 +1,36 @@
-name: Headwayio Figma token translator - Test
+name: Shipwright Token JR
+description: Automates style generation from a Shipwright design
+author: Headwayio
 
 on:
   push:
-     branches:
-       - main
+      branches:
+        - main
 jobs:
   generate-build-number-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.0
-      - run: npm install
-      - run: npm run build
-      - run: ls ${{ github.workspace }}
-      - run: ls ${{ github.workspace }}/tokens
-      - run: ls ${{ github.workspace }}/build
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Install
+        run:  |
+              npm install
+              npm run build
+      - name: Build
+        run:  |
+              echo "ls -a ."
+              ls -a .
+
+              echo "ls -a ${{ github.workspace }}"
+              ls -a ${{ github.workspace }}
+              
+              ls ${{ github.workspace }}/tokens
+              ls ${{ github.workspace }}/build
+      - name: Auto-Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: automated change
+          commit_author: Action <actions@github.com>
 
