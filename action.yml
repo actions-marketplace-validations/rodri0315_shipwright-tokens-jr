@@ -15,8 +15,9 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.0
       - name: Install
-        run: npm install
-        run: npm run build
+        run:  |
+              npm install
+              npm run build
       - name: Build
         run:  |
               ls ${{ github.workspace }}
