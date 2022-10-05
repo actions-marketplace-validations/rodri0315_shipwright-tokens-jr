@@ -1,6 +1,4 @@
 name: Shipwright Token JR
-description: Automates style generation from a Shipwright design
-author: Headwayio
 
 on:
   push:
