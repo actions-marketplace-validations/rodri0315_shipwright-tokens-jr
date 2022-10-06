@@ -21,11 +21,11 @@ jobs:
               echo "ls -a ."
               ls -a .
 
-              echo "ls -a ${{ github.workspace }}"
-              ls -a ${{ github.workspace }}
+              # echo "ls -a ${{ github.workspace }}"
+              # ls -a ${{ github.workspace }}
               
-              ls ${{ github.workspace }}/tokens
-              ls ${{ github.workspace }}/build
+              # ls ${{ github.workspace }}/tokens
+              # ls ${{ github.workspace }}/build
       - name: Auto-Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
